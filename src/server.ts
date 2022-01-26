@@ -1,7 +1,11 @@
+import 'dotenv/config';
 import express, { Request, Response } from 'express';
+import { ExampleController } from './example/example.controller';
+import { createConnection } from 'typeorm';
 
 class Server {
   private app: express.Application;
+  private exampleController: ExampleController;
 
   constructor() {
     this.app = express();
@@ -13,10 +17,16 @@ class Server {
     this.app.set('port', process.env.PORT || 4000);
   }
 
-  public routes() {
+  public async routes() {
+    await createConnection();
+
+    this.exampleController = new ExampleController();
+
     this.app.get('/', (req: Request, res: Response) => {
       res.send('Hello World');
     });
+
+    this.app.use('/api/examples', this.exampleController.router);
   }
 
   public start() {
