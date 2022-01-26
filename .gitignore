@@ -17,7 +17,7 @@ benchmarks/graphs
 
 # Private data
 .env
-ormconfig.json.example
+ormconfig.json
 
 # IDE
 .idea
