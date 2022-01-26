@@ -1,0 +1,23 @@
+# OSX
+.DS_Store
+Icon?
+._*
+
+# npm
+dist
+node_modules
+*.log
+*.gz
+
+# Coveralls
+coverage
+
+# Benchmarks
+benchmarks/graphs
+
+# Private data
+.env
+ormconfig.json.example
+
+# IDE
+.idea

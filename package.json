@@ -1,0 +1,46 @@
+{
+  "name": "tdd-ts-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "build": "rimraf ./dist && tsc",
+    "dev": "nodemon",
+    "start": "npm run build && node dist/server.js",
+    "test": "mocha -r ts-node/register src/**/*.test.ts",
+    "test:watch": "mocha -r ts-node/register --watch --watch-files src/**/*.ts, src/**/*.test.ts",
+    "lint": "eslint . --ext .ts"
+  },
+  "keywords": [],
+  "author": "Xavier FRANCOIS",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^14.3.2",
+    "express": "^4.17.2",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.41"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/chai": "^4.3.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^17.0.12",
+    "@typescript-eslint/eslint-plugin": "^5.10.1",
+    "@typescript-eslint/parser": "^5.10.1",
+    "bcrypt": "^5.0.1",
+    "chai": "^4.3.6",
+    "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "mocha": "^9.2.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.5"
+  }
+}
